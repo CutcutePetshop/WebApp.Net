@@ -1,8 +1,19 @@
-# FofurinhasPetShop WebApp
+<div align="center">
+  <img src="/logo.png" width="20%" />
+  <h3>FofurinhasPetShop WebApp</h3>
+</div>
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-
-<img src="/wwwroot/favicon.ico" width="200em" />
+<p align="center">
+  <a href="https://github.com/GEdO23/FofurinhasPetShop-WebApp/stargazers">
+    <img src="https://img.shields.io/github/stars/GEdO23/FofurinhasPetShop-WebApp?colorA=363a4f&colorB=b7bdf8&style=for-the-badge">
+  </a>
+  <a href="https://github.com/GEdO23/FofurinhasPetShop-WebApp/issues">
+    <img src="https://img.shields.io/github/issues/GEdO23/FofurinhasPetShop-WebApp?colorA=363a4f&colorB=f5a97f&style=for-the-badge">
+  </a>
+  <a href="https://github.com/GEdO23/FofurinhasPetShop-WebApp/contributors">
+    <img src="https://img.shields.io/github/contributors/GEdO23/FofurinhasPetShop-WebApp?colorA=363a4f&colorB=a6da95&style=for-the-badge">
+  </a>
+</p>
 
 ## 📋 Índice
 * [Índice](#indice)
