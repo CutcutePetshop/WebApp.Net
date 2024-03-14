@@ -14,7 +14,7 @@ public class Avaliacao
 
     private Usuario Usuario { get; set; }
     
-    private int QtdEstrelas { get; set; }
+    public int QtdEstrelas { get; set; }
     
     private string Descricao { get; set; }
     
