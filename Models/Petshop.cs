@@ -15,9 +15,9 @@ public class Petshop
     
     public string Nome { get; set; }
 
-    protected int CEP { get; set; }
+    public int CEP { get; set; }
     
-    private List<Animal> Animais { get; set; }
+    public List<Animal> Animais { get; set; }
     
-    private List<Avaliacao> Avaliacoes { get; set; }
+    public List<Avaliacao> Avaliacoes { get; set; }
 }
