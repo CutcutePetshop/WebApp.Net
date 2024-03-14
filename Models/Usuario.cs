@@ -3,7 +3,7 @@ namespace PetshopWebApp.Models;
 public class Usuario : IUsuario
 {
     
-    public Usuario(string nome, string senha, string email, string descricao, string telefoneCelular, string cpf, DateTime dataNascimento, Genero genero, string imgPath)
+    public Usuario(string nome, string senha, string email, string descricao, string telefone, string cpf, DateTime dataNascimento, Genero genero, string imgPath)
     {
         if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(cpf))
         {
@@ -14,7 +14,7 @@ public class Usuario : IUsuario
         Senha = senha;
         Email = email;
         Descricao = descricao;
-        TelefoneCelular = telefoneCelular;
+        Telefone = telefone;
         CPF = cpf;
         DataNascimento = dataNascimento;
         Genero = genero;
@@ -31,7 +31,7 @@ public class Usuario : IUsuario
     
     private string Descricao { get; set; }
     
-    private string TelefoneCelular { get; set; }
+    private string Telefone { get; set; }
     
     private string CPF { get; set; }
     
@@ -119,4 +119,10 @@ public class Usuario : IUsuario
     {
         throw new NotImplementedException();
     }
+}
+
+public enum Genero
+{
+    Masculino,
+    Feminino
 }

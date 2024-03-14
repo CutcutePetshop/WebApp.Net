@@ -52,3 +52,9 @@ public enum Porte
     Medio,
     Grande
 }
+
+public enum Sexo
+{
+    Macho,
+    Femea
+}
