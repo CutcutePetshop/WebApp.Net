@@ -1,9 +1,9 @@
 namespace PetshopWebApp.Models;
 
-public class Animal
+public class Animal : IAnimal
 {
 
-    public Animal(string nome, string descricao, string especie, string raca, Loja loja, Sexo sexo, DateTime dataNascimento, Porte porte, float peso, string imgPath)
+    public Animal(string nome, string descricao, string especie, string raca, Petshop petshop, Sexo sexo, DateTime dataNascimento, Porte porte, float peso, string imgPath)
     {
 
         if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(especie) || string.IsNullOrWhiteSpace(raca))
@@ -15,7 +15,7 @@ public class Animal
         Descricao = descricao;
         Especie = especie;
         Raca = raca;
-        Loja = loja;
+        Petshop = petshop;
         Sexo = sexo;
         DataNascimento = dataNascimento;
         Porte = porte;
@@ -25,25 +25,29 @@ public class Animal
 
     private int Id { get; set; }
     
-    private string Nome { get; set; } // Não pode ser vazia
+    public string Nome { get; set; } // Não pode ser vazia
     
-    private string Descricao { get; set; } // Pode ser vazia
+    public string Descricao { get; set; } // Pode ser vazia
     
-    private string Especie { get; set; } // Gato, Cachorro, Passaro, Peixe, etc.
+    public string Especie { get; set; } // Gato, Cachorro, Passaro, Peixe, etc.
     
-    private string Raca { get; set; } // Raça do animal
+    public string Raca { get; set; } // Raça do animal
 
-    private Loja Loja { get; set; } // Local do animal
+    public Petshop Petshop { get; set; } // Local do animal
     
-    private Sexo Sexo { get; set; } // Macho, Femea
+    public Sexo Sexo { get; set; } // Macho, Femea
     
-    private DateTime DataNascimento { get; set; }
+    public DateTime DataNascimento { get; set; }
 
-    private Porte Porte { get; set; } // Pequeno, médio, grande
+    public Porte Porte { get; set; } // Pequeno, médio, grande
     
-    private float Peso{ get; set; }
+    public float Peso{ get; set; }
     
-    private string ImgPath { get; set; } // Caminho para uma foto do animal
+    public string ImgPath { get; set; } // Caminho para uma foto do animal
+    public virtual void EmitirSom()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public enum Porte
