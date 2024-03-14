@@ -16,5 +16,6 @@ public class Loja
     private Endereco Endereco { get; set; }
     
     private List<Animal>? Animais { get; set; }
-
+    
+    private List<Avaliacao>? Avaliacoes { get; set; }
 }
