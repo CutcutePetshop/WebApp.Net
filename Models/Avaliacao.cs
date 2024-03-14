@@ -12,10 +12,10 @@ public class Avaliacao
     
     private int Id { get; set; }
 
-    private Usuario Usuario { get; set; }
+    public Usuario Usuario { get; set; }
     
-    public int QtdEstrelas { get; set; }
+    internal int QtdEstrelas { get; set; }
     
-    private string Descricao { get; set; }
+    public string Descricao { get; set; }
     
 }

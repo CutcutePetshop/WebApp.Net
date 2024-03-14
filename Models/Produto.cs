@@ -9,9 +9,10 @@ public class Produto
         Descricao = descricao;
         Preco = preco;
         Vendedor = vendedor;
+        Avaliacoes = new List<Avaliacao>();
     }
     
-    private int Id { get; set; }
+    public int Id { get; set; }
     
     private string Nome { get; set; }
     
@@ -21,7 +22,7 @@ public class Produto
     
     private Vendedor Vendedor { get; set; }
     
-    private List<Avaliacao>? Avaliacoes { get; set; }
+    private List<Avaliacao> Avaliacoes { get; set; }
 
     private int GetAvaliacaoGeral()
     {
