@@ -2,6 +2,14 @@ namespace PetshopWebApp.Models;
 
 public class Petshop
 {
+    public Petshop(int id, string nome, int cep)
+    {
+        Id = id;
+        Nome = nome;
+        CEP = cep;
+        Animais = new List<Animal>();
+        Avaliacoes = new List<Avaliacao>();
+    }
     
     public Petshop(string nome, int cep)
     {
@@ -11,7 +19,7 @@ public class Petshop
         Avaliacoes = new List<Avaliacao>();
     }
     
-    private int Id { get; set; }
+    public int Id { get; set; }
     
     public string Nome { get; set; }
 
