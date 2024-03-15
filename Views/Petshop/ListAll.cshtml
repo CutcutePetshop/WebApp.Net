@@ -14,7 +14,7 @@
                 <h3 class="text-black">@Html.DisplayFor(petshop => item.Nome)</h3>
                 <p class="text-black-50">CEP: @Html.DisplayFor(petshop => item.CEP)</p>
             </div>
-            <a class="btn btn-dark w-50 align-self-end" href="/">Ver mais</a>
+            <a class="btn btn-dark w-50 align-self-end" href="@Url.Action("Details", "Petshop", new { id = item.Id})">Ver mais</a>
         </div>
     }
 </div>
