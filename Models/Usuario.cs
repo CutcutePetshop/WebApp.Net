@@ -23,7 +23,7 @@ public class Usuario : IUsuario
     
     private int Id { get; set; }
     
-    private string Nome { get; set; }
+    public string Nome { get; set; }
     
     private string Senha { get; set; }
     
