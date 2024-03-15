@@ -1,0 +1,20 @@
+@model IEnumerable<PetshopWebApp.Models.Petshop>
+
+@{
+    ViewData["Title"] = "Petshops";
+}
+
+<h1>Petshops</h1>
+
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+        <div class="flex-grow-1 p-5 d-flex flex-column gap-3 rounded-3 bg-white border border-dark m-3">
+            <div class="d-flex flex-column gap-2">
+                <h3 class="text-black">@Html.DisplayFor(petshop => item.Nome)</h3>
+                <p class="text-black-50">CEP: @Html.DisplayFor(petshop => item.CEP)</p>
+            </div>
+            <a class="btn btn-dark w-50 align-self-end" href="@Url.Action("Details", "Petshop", new { id = item.Id})">Ver mais</a>
+        </div>
+    }
+</div>

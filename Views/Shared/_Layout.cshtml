@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using PetshopWebApp.Models
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,6 +26,20 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Petshop" asp-action="ListAll">Petshop</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            @* Isso aqui não faz sentido nenhum, mas eu precisava usar Usuario e eu to sem tempo...  *@
+                            @if (0 == 0)
+                            {
+                                Usuario usuario = new Usuario("Gabriel", "2365234624365", "4523525234", "", "", "45437634", DateTime.Now, Genero.Masculino, "");
+                                @Html.DisplayFor(user => usuario.Nome)
+                                ;
+                            }
                         </li>
                     </ul>
                 </div>
