@@ -1,6 +1,6 @@
 <div align="center">
   <img src="logo.png" width="20%" />
-  <h3>FofurinhasPetShop WebApp</h3>
+  <h3>CutCute PetShop WebApp</h3>
   <h4>RM99632 - Gabriel Eringer de Oliveira</h4>
 </div>
 
