@@ -20,9 +20,9 @@ namespace PetshopWebApp.Controllers
         private List<Petshop> ListPetshops()
         {
             List<Petshop> listPetshops = new List<Petshop>();
-            listPetshops.Add(new Petshop(1, "Fofurinhas Curitiba", 12341234));
-            listPetshops.Add(new Petshop(2, "Fofurinhas OZ", 43214321));
-            listPetshops.Add(new Petshop(3, "Fofurinhas SP", 99567856));
+            listPetshops.Add(new Petshop(1, "CutCute Curitiba", 12341234));
+            listPetshops.Add(new Petshop(2, "CutCute OZ", 43214321));
+            listPetshops.Add(new Petshop(3, "CutCute SP", 99567856));
             
             listPetshops[0].Animais = ListAnimais();
             listPetshops[1].Animais = ListAnimais();
