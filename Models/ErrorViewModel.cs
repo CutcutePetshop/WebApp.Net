@@ -1,4 +1,4 @@
-namespace PetshopWebApp.Models
+﻿namespace PetshopWebApp.Models
 {
     public class ErrorViewModel
     {

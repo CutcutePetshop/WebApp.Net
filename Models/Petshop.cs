@@ -1,31 +1,27 @@
-namespace PetshopWebApp.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Petshop
+namespace PetshopWebApp.Models
 {
-    public Petshop(int id, string nome, int cep)
-    {
-        Id = id;
-        Nome = nome;
-        CEP = cep;
-        Animais = new List<Animal>();
-        Avaliacoes = new List<Avaliacao>();
-    }
-    
-    public Petshop(string nome, int cep)
-    {
-        Nome = nome;
-        CEP = cep;
-        Animais = new List<Animal>();
-        Avaliacoes = new List<Avaliacao>();
-    }
-    
-    public int Id { get; set; }
-    
-    public string Nome { get; set; }
 
-    public int CEP { get; set; }
-    
-    public List<Animal> Animais { get; set; }
-    
-    public List<Avaliacao> Avaliacoes { get; set; }
+    [Table ("TB_PETSHOP")]
+    public class Petshop
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdPetshop { get; set; }
+
+
+        [Required(ErrorMessage = "O nome é obrigatório.")]
+        [Column("PetshopName", TypeName = "VARCHAR(50)")]
+        [MaxLength(50, ErrorMessage = "O nome deve ser menor que 50 caracteres.")]
+        public required string Name { get; set; }
+
+
+        [Column("PetshopCEP", TypeName = "VARCHAR(50)")]
+        [MinLength(10, ErrorMessage = "O CEP deve ser maior que 10 caracteres.")]
+        [MaxLength(50, ErrorMessage = "O CEP deve ser menor que 50 caracteres.")]
+        public string? Cep { get; set; }
+
+    }
 }
