@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using PetshopWebApp.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add databases to project
+builder.Services.AddDbContext<OracleDbContext>(options =>
+{
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
+});
 
 var app = builder.Build();
 
