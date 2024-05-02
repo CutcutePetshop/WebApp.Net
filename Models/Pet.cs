@@ -70,6 +70,6 @@ namespace PetshopWebApp.Models
         [Required(ErrorMessage = "O pet deve pertencer a um petshop.")]
         [Column("id_petshop")]
         public required int PetshopId { get; set; }
-        public required Petshop Petshop { get; set; }
+        public Petshop? Petshop { get; set; }
     }
 }

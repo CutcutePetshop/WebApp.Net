@@ -55,10 +55,6 @@ namespace PetshopWebApp.Controllers
         public IActionResult GetAll()
         {
             var model = _service.GetAll();
-            if (model == null)
-            {
-                return NotFound();
-            }
             return Ok(model);
         }
 

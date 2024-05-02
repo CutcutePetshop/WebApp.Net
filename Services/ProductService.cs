@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PetshopWebApp.Models;
+﻿using PetshopWebApp.Models;
 using PetshopWebApp.Persistence;
 
 namespace PetshopWebApp.Services
@@ -48,28 +47,12 @@ namespace PetshopWebApp.Services
 
         public List<Product> GetAll()
         {
-            try
-            {
-                return _context.Products.ToList();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ocorreu um erro ao tentar encontrar produtos");
-                return null;
-            }
+            return _context.Products.ToList();
         }
 
         public Product GetById(int id)
         {
-            try
-            {
-                return _context.Products.FirstOrDefault(p => p.IdProduct == id);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ocorreu um erro ao tentar encontrar produto por id");
-                return null;
-            }
+            return _context.Products.FirstOrDefault(p => p.IdProduct == id);
         }
 
         public bool Update(int id, Product newModel)

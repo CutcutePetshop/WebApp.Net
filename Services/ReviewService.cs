@@ -15,6 +15,7 @@ namespace PetshopWebApp.Services
         {
             try
             {
+                model.DatePublished = DateTime.Today;
                 _context.Reviews.Add(model);
                 _context.SaveChanges();
                 return true;

@@ -29,7 +29,7 @@ namespace PetshopWebApp.Models
 
         [Required(ErrorMessage = "A data publicada é obrigatória.")]
         [Column("dt_published", TypeName = "DATE")]
-        public required DateTime DatePublished { get; set; }
+        public DateTime DatePublished { get; set; }
 
 
         [Required(ErrorMessage = "O usuario é obrigatório.")]

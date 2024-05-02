@@ -33,9 +33,8 @@ namespace PetshopWebApp.Models
         public required decimal Price { get; set; }
 
 
-        [Column("nr_rating", TypeName = "NUMBER(1)")]
-        [Range(0, 5, ErrorMessage = "A avaliação deve ser entre 0 e 5.")]
-        public required decimal Rating { get; set; }
+        [Column("nr_rating", TypeName = "NUMBER(2, 1)")]
+        public decimal Rating { get; set; }
 
         public ICollection<Review>? Reviews { get; set; }
 
@@ -44,7 +43,7 @@ namespace PetshopWebApp.Models
         [Required(ErrorMessage = "O produto deve pertencer a um petshop.")]
         [Column("id_petshop")]
         public required int PetshopId { get; set; }
-        public required Petshop Petshop { get; set; }
+        public Petshop? Petshop { get; set; }
 
     }
 }

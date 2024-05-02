@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using PetshopWebApp.Persistence;
@@ -11,9 +12,11 @@ using PetshopWebApp.Persistence;
 namespace PetshopWebApp.Migrations
 {
     [DbContext(typeof(OracleDbContext))]
-    partial class OracleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240502015120_Update4")]
+    partial class Update4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,10 +113,6 @@ namespace PetshopWebApp.Migrations
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnName("nm_petshop");
 
-                    b.Property<decimal>("Rating")
-                        .HasColumnType("NUMBER(2, 1)")
-                        .HasColumnName("nr_rating");
-
                     b.HasKey("IdPetshop");
 
                     b.ToTable("TB_PETSHOP");
@@ -147,10 +146,6 @@ namespace PetshopWebApp.Migrations
                         .HasPrecision(7, 2)
                         .HasColumnType("NUMBER(7, 2)")
                         .HasColumnName("vl_product");
-
-                    b.Property<decimal>("Rating")
-                        .HasColumnType("NUMBER(2, 1)")
-                        .HasColumnName("nr_rating");
 
                     b.HasKey("IdProduct");
 
