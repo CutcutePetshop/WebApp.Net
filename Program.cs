@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PetshopWebApp.Persistence;
+using PetshopWebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,12 @@ builder.Services.AddDbContext<OracleDbContext>(options =>
 {
     options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
 });
+
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<PetService>();
+builder.Services.AddScoped<PetshopService>();
+builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<ProductService>();
 
 var app = builder.Build();
 

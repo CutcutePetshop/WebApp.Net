@@ -1,22 +1,22 @@
+﻿using Microsoft.AspNetCore.Mvc;
 using PetshopWebApp.Models;
-using Microsoft.AspNetCore.Mvc;
 using PetshopWebApp.Services;
 
 namespace PetshopWebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PetshopController : Controller, ControllerDTO<Petshop>
+    public class PetController : Controller, ControllerDTO<Pet>
     {
-        private readonly PetshopService _service;
+        private readonly PetService _service;
 
-        public PetshopController(PetshopService service)
+        public PetController(PetService service)
         {
             _service = service;
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Petshop newModel)
+        public IActionResult Create([FromBody] Pet newModel)
         {
             if (newModel == null)
             {
@@ -74,7 +74,7 @@ namespace PetshopWebApp.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] Petshop newModel)
+        public IActionResult Update(int id, [FromBody] Pet newModel)
         {
             if (newModel == null)
             {
@@ -91,6 +91,4 @@ namespace PetshopWebApp.Controllers
             return NoContent();
         }
     }
-
 }
-

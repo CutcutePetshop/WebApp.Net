@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<form action="/" method="post">
+    <fieldset>
+        <legend>Cadastro</legend>
+
+        <label for="idName">Nome:</label>
+        <input id="idName" type="text" placeholder="Digite seu nome." required />
+
+        <label for="idPassword">Senha:</label>
+        <input id="idPassword" type="password" placeholder="Insira uma senha forte." required />
+
+        <label for="idEmail">Email:</label>
+        <input id="idEmail" type="email" placeholder="Insira seu email." />
+
+        <label for="idPhoneNumber">Telefone:</label>
+        <input id="idPhoneNumber" type="tel" placeholder="Insira seu telefone." />
+
+        <label for="idCpf">CPF:</label>
+        <input id="idCpf" type="text" placeholder="Digite seu CPF." required />
+
+        <input type="submit" value="Cadastrar" action="post" />
+
+    </fieldset>
+</form>

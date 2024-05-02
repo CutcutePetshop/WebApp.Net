@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using PetshopWebApp.Persistence;
@@ -11,9 +12,11 @@ using PetshopWebApp.Persistence;
 namespace PetshopWebApp.Migrations
 {
     [DbContext(typeof(OracleDbContext))]
-    partial class OracleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240501225458_AddForeignKeys")]
+    partial class AddForeignKeys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,8 +201,6 @@ namespace PetshopWebApp.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("TB_REVIEW");
                 });
 
@@ -263,49 +264,31 @@ namespace PetshopWebApp.Migrations
 
             modelBuilder.Entity("PetshopWebApp.Models.Pet", b =>
                 {
-                    b.HasOne("PetshopWebApp.Models.Petshop", "Petshop")
+                    b.HasOne("PetshopWebApp.Models.Petshop", null)
                         .WithMany("Pets")
                         .HasForeignKey("PetshopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Petshop");
                 });
 
             modelBuilder.Entity("PetshopWebApp.Models.Product", b =>
                 {
-                    b.HasOne("PetshopWebApp.Models.Petshop", "Petshop")
+                    b.HasOne("PetshopWebApp.Models.Petshop", null)
                         .WithMany("Products")
                         .HasForeignKey("PetshopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Petshop");
                 });
 
             modelBuilder.Entity("PetshopWebApp.Models.Review", b =>
                 {
-                    b.HasOne("PetshopWebApp.Models.Petshop", "Petshop")
+                    b.HasOne("PetshopWebApp.Models.Petshop", null)
                         .WithMany("Reviews")
-                        .HasForeignKey("PetshopId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PetshopId");
 
-                    b.HasOne("PetshopWebApp.Models.Product", "Product")
+                    b.HasOne("PetshopWebApp.Models.Product", null)
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("PetshopWebApp.Models.User", "User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Petshop");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("User");
+                        .HasForeignKey("ProductId");
                 });
 
             modelBuilder.Entity("PetshopWebApp.Models.Petshop", b =>
@@ -318,11 +301,6 @@ namespace PetshopWebApp.Migrations
                 });
 
             modelBuilder.Entity("PetshopWebApp.Models.Product", b =>
-                {
-                    b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("PetshopWebApp.Models.User", b =>
                 {
                     b.Navigation("Reviews");
                 });
